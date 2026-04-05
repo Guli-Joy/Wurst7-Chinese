@@ -13,6 +13,7 @@ import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.wurstclient.Feature;
 import net.wurstclient.clickgui.ClickGui;
+import net.wurstclient.hack.Hack;
 import net.wurstclient.clickgui.ClickGuiIcons;
 import net.wurstclient.clickgui.Component;
 import net.wurstclient.clickgui.SettingsWindow;
@@ -118,7 +119,7 @@ public final class FeatureButton extends Component
 				y2 - 0.5F, hSettings, !isSettingsWindowOpen());
 		
 		// text
-		String name = feature.getName();
+		String name = feature instanceof Hack ? Hack.getChineseName(feature.getName()) : Hack.getChineseName(feature.getName());
 		int tx = x1 + (x3 - x1 - TR.width(name)) / 2;
 		int ty = y1 + 2;
 		context.drawString(TR, name, tx, ty, GUI.getTxtColor(), false);

@@ -9,20 +9,27 @@ package net.wurstclient;
 
 public enum Category
 {
-	BLOCKS("Blocks"),
-	MOVEMENT("Movement"),
-	COMBAT("Combat"),
-	RENDER("Render"),
-	CHAT("Chat"),
-	FUN("Fun"),
-	ITEMS("Items"),
-	OTHER("Other");
+	BLOCKS("Blocks", "方块"),
+	MOVEMENT("Movement", "移动"),
+	COMBAT("Combat", "战斗"),
+	RENDER("Render", "渲染"),
+	CHAT("Chat", "聊天"),
+	FUN("Fun", "娱乐"),
+	ITEMS("Items", "物品"),
+	OTHER("Other", "其他");
 	
 	private final String name;
+	private final String displayName;
 	
-	private Category(String name)
+	private Category(String name, String displayName)
 	{
 		this.name = name;
+		this.displayName = displayName;
+	}
+	
+	public String getDisplayName()
+	{
+		return displayName;
 	}
 	
 	public String getName()

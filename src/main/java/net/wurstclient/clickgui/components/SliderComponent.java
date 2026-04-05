@@ -154,7 +154,7 @@ public final class SliderComponent extends Component
 		RenderUtils.drawBorder2D(context, xk1, yk1, xk2, yk2, 0x80101010);
 		
 		// text
-		String name = setting.getName();
+		String name = setting.getDisplayName();
 		String value = setting.getValueString();
 		int valueWidth = TR.width(value);
 		int txtColor = GUI.getTxtColor();

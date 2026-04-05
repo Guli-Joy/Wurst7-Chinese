@@ -50,7 +50,7 @@ public final class SelectFileScreen extends Screen
 		addWidget(listGui);
 		
 		addRenderableWidget(
-			Button.builder(Component.literal("Open Folder"), b -> openFolder())
+			Button.builder(Component.literal("打开文件夹"), b -> openFolder())
 				.bounds(8, 8, 100, 20).build());
 		
 		addRenderableWidget(Button
@@ -59,11 +59,11 @@ public final class SelectFileScreen extends Screen
 			.bounds(width - 108, 8, 100, 20).build());
 		
 		doneButton = addRenderableWidget(
-			Button.builder(Component.literal("Done"), b -> done())
+			Button.builder(Component.literal("完成"), b -> done())
 				.bounds(width / 2 - 102, height - 48, 100, 20).build());
 		
 		addRenderableWidget(
-			Button.builder(Component.literal("Cancel"), b -> openPrevScreen())
+			Button.builder(Component.literal("取消"), b -> openPrevScreen())
 				.bounds(width / 2 + 2, height - 48, 100, 20).build());
 	}
 	
