@@ -79,6 +79,9 @@ jobs:
         path: all-jars
         merge-multiple: true
 
+    - name: Remove sources jars
+      run: rm -f all-jars/*-sources.jar
+
     - name: List jars
       run: ls -la all-jars/
 
