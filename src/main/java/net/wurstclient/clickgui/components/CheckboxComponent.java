@@ -216,7 +216,7 @@ public final class CheckboxComponent extends Component
 		
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		
-		String name = setting.getName();
+		String name = setting.getDisplayName();
 		int tx = x3 + 2;
 		int ty = y1 + 2;
 		context.drawText(MC.textRenderer, name, tx, ty, txtColor, false);
