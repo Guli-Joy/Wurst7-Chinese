@@ -1,16 +1,17 @@
-# Security Policy
+# 安全策略
 
-## Supported Versions
+## 支持的版本
 
-Generally, Wurst Client versions for the latest Minecraft release and for the latest Minecraft snapshot are supported.
+本汉化版基于 Wurst Client `v7.50.3-MC1.20.1`。
 
-Older versions are decided on a case-by-case basis, depending on the severity of the exploit. ![](https://img.wimods.net/github.com/Wurst-Imperium/Wurst7/SECURITY.md)
+如需报告原版 Wurst 的安全漏洞，请联系原项目作者。
 
-## Reporting a Vulnerability
+## 报告漏洞
 
-You can report a vulnerability by sending an email to contact.wurstimperium@gmail.com.
+- **汉化相关问题**：请在本仓库提交 [Issue](https://github.com/Guli-Joy/Wurst7-Chinese/issues)
+- **原版 Wurst 安全漏洞**：请发送邮件至 contact.wurstimperium@gmail.com
 
-If you want to encrypt your email with PGP (you don't have to), then you can find my public key below:
+如需使用 PGP 加密邮件（非必须），以下是原作者的公钥：
 
 ```
 -----BEGIN PGP PUBLIC KEY BLOCK-----

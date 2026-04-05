@@ -1,110 +1,85 @@
-# Wurst Client v7
+# Wurst Client v7 - 中文汉化版
 
-![Wurst Client logo](https://img.wimods.net/github.com/Wurst-Imperium/Wurst7?to=https://wurst.wiki/_media/logo/wurst_758x192.webp)
+基于 [Wurst-Imperium/Wurst7](https://github.com/Wurst-Imperium/Wurst7) `v7.50.3-MC1.20.1` 的**全面中文汉化**版本。
 
-- **Downloads:** [https://www.wurstclient.net/download/](https://go.wimods.net/from/github.com/Wurst-Imperium/Wurst7?to=https%3A%2F%2Fwww.wurstclient.net%2Fdownload%2F%3Futm_source%3DGitHub%26utm_medium%3DWurst7%2Brepo)
+## 汉化内容
 
-- **Installation guide:** [https://www.wurstclient.net/tutorials/how-to-install/](https://go.wimods.net/from/github.com/Wurst-Imperium/Wurst7?to=https%3A%2F%2Fwww.wurstclient.net%2Ftutorials%2Fhow-to-install%2F%3Futm_source%3DGitHub%26utm_medium%3DWurst7%2Brepo)
+| 项目 | 数量 | 说明 |
+|------|------|------|
+| **功能分类名** | 8 个 | Blocks→方块, Combat→战斗, Movement→移动 等 |
+| **功能名称** | 130+ 个 | KillAura→杀戮光环, Flight→飞行, Zoom→缩放 等 |
+| **功能描述** | 305 条 | 通过 `zh_cn.json` 翻译文件实现 |
+| **设置项名称** | 270+ 个 | Range→范围, Speed→速度, Filter players→过滤玩家 等 |
+| **界面按钮/文字** | 全部 | Wurst 设置、快捷键管理、导航器、服务器搜索等所有界面 |
+| **提示信息** | 全部 | 滑块/复选框/颜色选择器的工具提示 |
 
-- **Feature list:** [https://www.wurstclient.net/](https://go.wimods.net/from/github.com/Wurst-Imperium/Wurst7?to=https%3A%2F%2Fwww.wurstclient.net%2F%3Futm_source%3DGitHub%26utm_medium%3DWurst7%2Brepo)
+## 安装方法
 
-- **Wiki:** [https://wurst.wiki/](https://go.wimods.net/from/github.com/Wurst-Imperium/Wurst7?to=https%3A%2F%2Fwurst.wiki%2F%3Futm_source%3DGitHub%26utm_medium%3DWurst7%2Brepo)
+### 方式一：直接使用编译好的 jar
 
-- **Forum:** [https://wurstforum.net/](https://go.wimods.net/from/github.com/Wurst-Imperium/Wurst7?to=https%3A%2F%2Fwurstforum.net%2F%3Futm_source%3DGitHub%26utm_medium%3DWurst7%2Brepo)	
+1. 安装 [Fabric Loader](https://fabricmc.net/use/installer/) (Minecraft 1.20.1)
+2. 下载 [Fabric API](https://modrinth.com/mod/fabric-api) 放入 `mods` 文件夹
+3. 从 [Releases](https://github.com/Guli-Joy/Wurst7-Chinese/releases) 下载汉化版 jar 放入 `mods` 文件夹
+4. 启动游戏
 
-- **Twitter/X:** [https://x.com/Wurst_Imperium](https://go.wimods.net/from/github.com/Wurst-Imperium/Wurst7?to=https://x.com/Wurst_Imperium)
-
-- **YouTube:** [https://www.youtube.com/@Alexander01998](https://go.wimods.net/from/github.com/Wurst-Imperium/Wurst7?to=https://www.youtube.com/@Alexander01998)
-
-- **Donations/Perks:** [https://ko-fi.com/wurst](https://go.wimods.net/from/github.com/Wurst-Imperium/Wurst7?to=https://ko-fi.com/wurst)
-
-## Installation
-
-Wurst 7 can be installed just like any other Fabric mod. Here are the basic installation steps:
-
-1. Run the Fabric installer.
-2. Add the Wurst Client and Fabric API to your mods folder.
-
-Please refer to the [full Wurst 7 installation guide](https://go.wimods.net/from/github.com/Wurst-Imperium/Wurst7?to=https%3A%2F%2Fwww.wurstclient.net%2Ftutorials%2Fhow-to-install%2F%3Futm_source%3DGitHub%26utm_medium%3DWurst7%2Brepo) if you need more detailed instructions or run into any problems.
-
-Also, this should be obvious, but you do need to have a licensed copy of Minecraft Java Edition in order to use Wurst. Wurst is a cheat client, not a pirate client.
-
-## Development Setup
+### 方式二：从源码编译
 
 > [!IMPORTANT]
-> Make sure you have [Java Development Kit 17](https://adoptium.net/?variant=openjdk17&jvmVariant=hotspot) installed. It won't work with other versions.
+> 需要安装 [JDK 17](https://adoptium.net/?variant=openjdk17&jvmVariant=hotspot)（也兼容更高版本）。
 
-### Development using Eclipse
-
-1. Clone the repository:
-
-   ```pwsh
-   git clone https://github.com/Wurst-Imperium/Wurst7.git
-   cd Wurst7
-   ```
-
-2. Generate the sources:
-
-   ```pwsh
-   ./gradlew genSources eclipse
-   ```
-
-3. In Eclipse, go to `Import...` > `Existing Projects into Workspace` and select this project.
-
-4. **Optional:** Right-click on the project and select `Properties` > `Java Code Style`. Then under `Clean Up`, `Code Templates`, `Formatter`, import the respective files in the `codestyle` folder.
-
-### Development using VSCode / Cursor
-
-> [!TIP]
-> You'll probably want to install the [Extension Pack for Java](https://go.wimods.net/from/github.com/Wurst-Imperium/Wurst7?to=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3Dvscjava.vscode-java-pack) to make development easier.
-
-1. Clone the repository:
-
-   ```pwsh
-   git clone https://github.com/Wurst-Imperium/Wurst7.git
-   cd Wurst7
-   ```
-
-2. Generate the sources:
-
-   ```pwsh
-   ./gradlew genSources vscode
+```bash
+git clone https://github.com/Guli-Joy/Wurst7-Chinese.git
+cd Wurst7-Chinese
+./gradlew build -x test -x spotlessCheck
 ```
 
-3. Open the `Wurst7` folder in VSCode / Cursor.
+编译完成后，jar 文件位于 `build/libs/` 目录。
 
-4. **Optional:** In the VSCode settings, set `java.format.settings.url` to `https://raw.githubusercontent.com/Wurst-Imperium/Wurst7/master/codestyle/formatter.xml` and `java.format.settings.profile` to `Wurst-Imperium`.
+## 使用说明
 
-### Development using IntelliJ IDEA
+- 按 **右 Ctrl** 键打开 ClickGUI（点击界面）
+- 按 `.` 键打开命令行（输入 `.help` 查看所有命令）
+- 在 Wurst 设置 > 翻译 中关闭 **"强制英语"** 即可显示中文功能描述
 
-I don't use or recommend IntelliJ, but the commands to run would be:
+## 开发设置
 
-```pwsh
-git clone https://github.com/Wurst-Imperium/Wurst7.git
-cd Wurst7
+### Eclipse
+
+```bash
+git clone https://github.com/Guli-Joy/Wurst7-Chinese.git
+cd Wurst7-Chinese
+./gradlew genSources eclipse
+```
+
+在 Eclipse 中导入项目即可。
+
+### VSCode / Cursor / Windsurf
+
+```bash
+git clone https://github.com/Guli-Joy/Wurst7-Chinese.git
+cd Wurst7-Chinese
+./gradlew genSources vscode
+```
+
+用编辑器打开项目文件夹。
+
+### IntelliJ IDEA
+
+```bash
+git clone https://github.com/Guli-Joy/Wurst7-Chinese.git
+cd Wurst7-Chinese
 ./gradlew genSources idea --no-configuration-cache
 ```
 
-**Note:** IntelliJ IDEA is [not yet compatible](https://github.com/FabricMC/fabric-loom/issues/1349) with Gradle's configuration cache. You will run into issues.
+## 贡献
 
-Possible workarounds:
-- Turn off args files ([this setting](https://i.imgur.com/zHqIOYg.png)). Won't work for some users because of a command length limit.
-- Add `--no-configuration-cache` to all of your Gradle commands.
+欢迎提交 Pull Request 来改进翻译或修复翻译错误。
 
-## Contributing
+## 致谢
 
-Please always [contact me](https://go.wimods.net/from/github.com/Wurst-Imperium/Wurst7?to=https%3A%2F%2Fwww.wurstclient.net%2Fcontact%2F%3Futm_source%3DGitHub%26utm_medium%3DWurst7%2Brepo) before opening a Pull Request. Any method works. That way we can discuss your ideas early and avoid wasting your time working on unwanted features or having to make lots of changes later.
+- 原项目：[Wurst-Imperium/Wurst7](https://github.com/Wurst-Imperium/Wurst7) by Alexander01998
+- 汉化翻译工作基于 GPLv3 许可证进行
 
-We also have [contributing guidelines](https://go.wimods.net/from/github.com/Wurst-Imperium/Wurst7?to=https://github.com/Wurst-Imperium/Wurst7/blob/master/CONTRIBUTING.md) to help you get started.
+## 许可证
 
-## Translations
-
-To enable translations in-game, go to Wurst Options > Translations > ON.
-
-The preferred way to submit translations is through a Pull Request here on GitHub. The translation files are located in [this folder](https://go.wimods.net/from/github.com/Wurst-Imperium/Wurst7?to=https://github.com/Wurst-Imperium/Wurst7/tree/master/src/main/resources/assets/wurst/translations).
-
-Names of features (hacks/commands/etc.) should always be kept in English. This ensures that everyone can use the same commands, keybinds, etc. regardless of their language setting. It also makes it easier to communicate with someone who uses Wurst in a different language.
-
-## License
-
-This code is licensed under the GNU General Public License v3. **You can only use this code in open-source clients that you release under the same license! Using it in closed-source/proprietary clients is not allowed!**
+本项目遵循 **GNU General Public License v3** 开源许可证。**只能在同样使用 GPLv3 许可证的开源客户端中使用此代码，不允许用于闭源/专有客户端！**

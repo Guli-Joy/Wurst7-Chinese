@@ -1,55 +1,46 @@
-# Contributing Guidelines
-Thank you for considering to contribute! Here are some guidelines to help you get started. ![](https://img.wimods.net/github.com/Wurst-Imperium/Wurst7/CONTRIBUTING.md)
+# 贡献指南
+
+感谢你考虑为本项目做出贡献！以下是一些帮助你入门的指南。
 
 ## Pull Requests
 
-### 1. Keep Pull Requests Small and Focused
-- **1 PR = 1 change**: Each pull request should address a single issue or add a single feature.
-- **Avoid Bloat**: Aim to keep the diff small and digestible. Don't stuff PRs with unrelated changes.
+### 1. 保持 PR 小而专注
+- **一个 PR 只做一件事**：每个 PR 应只解决一个问题或添加一个功能。
+- **避免臃肿**：保持 diff 简洁易读，不要在 PR 中塞入无关的改动。
 
-### 2. Respect the Project's Scope and Vision
-- **Communicate Before Coding**: Open an issue to discuss any major changes before you start working on them. This can save you a lot of time and effort in case your idea is rejected. When in doubt, ask first.
-- **Avoid Breaking Changes**: When modifying existing features, it's usually better to make your changes optional. Your version may work better for you, but other people will often have different use cases that rely on the original behavior.
+### 2. 尊重项目范围
+- **编码前先沟通**：在开始重大改动之前，先开一个 Issue 讨论。这样可以避免你的想法被拒绝后浪费时间。
+- **避免破坏性更改**：修改现有功能时，最好让你的更改是可选的。
 
-### 3. Ensure Quality and Completeness
-- **Finish the Code**: Submit a PR only when it's complete, tested, and ready for review. Don't use pull requests as a dumping ground for half-baked prototypes.
-- If you need early feedback on a larger change, clearly mark the PR as a draft. You should have already started a discussion and gotten the go-ahead for your idea at this point.
-- **Watch the Checks**: Make sure that all automated checks are passing and that there aren't any merge conflicts. Fix such issues before asking for a review.
+### 3. 确保质量和完整性
+- **完成代码再提交**：只在代码完成、测试通过、准备好接受审查时才提交 PR。
+- 如果需要早期反馈，请将 PR 标记为草稿。
+- **关注自动检查**：确保所有自动检查通过且没有合并冲突。
 
-### 4. Follow the Code Style
-- Run Eclipse's Clean Up and Format tools with the settings from the [codestyle folder](codestyle).
-- If you don't use Eclipse, you can run `./gradlew spotlessApply` instead. However, be aware that this isn't as thorough as Eclipse's tools.
-- For anything that these automated tools don't cover, please try to match the existing code style as closely as possible.
+### 4. 遵循代码风格
+- 使用 `codestyle` 文件夹中的设置运行 Eclipse 的 Clean Up 和 Format 工具。
+- 如果不使用 Eclipse，可以运行 `./gradlew spotlessApply`。
+- 对于自动工具未覆盖的部分，请尽量匹配现有代码风格。
 
-## Other Ways To Help
+## 翻译相关贡献
 
-- fixing a typo
-  - in the Wurst Client itself (look for the pen icon at the top right)
-  - on WurstClient.net (scroll all the way down and click "edit this page")
-  - on the Wurst Wiki (login and click "Edit this page")
-- improving an existing bug report
-  - figuring out which Minecraft versions are affected by the bug
-  - Can you figure out how to make the bug happen every time? If so, please let me know.
-    - The ["could not reproduce"](https://github.com/Wurst-Imperium/Wurst7/labels/could%20not%20reproduce) label lists bug reports where I haven't been able to figure this out.
-- reporting a new dupe/exploit in Minecraft that could be added to Wurst
-- helping with a feature request
-  - Can you explain how the feature works?
-  - Can you add the feature in a Pull Request?
-  - Do you know anything else about the feature that hasn't been mentioned?
-- helping with the [Wurst Wiki](https://wurst.wiki/)
-  - translating Wurst Wiki articles to another language
-  - adding screenshots of features where appropriate
-  - making sure that changes from recent Wurst updates are documented
-  - digging through old Wurst updates to find out when exactly a feature was added
-- helping people who can't figure out how to install Wurst
-- making tutorials / how-to videos
-  - how to make [AutoBuild templates](https://wurst.wiki/autobuild#creating_templates)
-  - how to use the [profile system](https://www.wurstclient.net/updates/wurst-7-1/)
-- creating more backups/archives of Wurst
-  - [creating a fork](https://github.com/Wurst-Imperium/Wurst7/fork) / mirror of this repository
-  - adding [WurstClient.net](https://www.wurstclient.net/) pages to the Internet Archive
-  - adding [Wurst Wiki](https://wurst.wiki/) articles to the Internet Archive
-  - archiving old [Wurst releases](https://www.wurstclient.net/download/) & source code in case they are ever taken down
-  - archiving [WiZARDHAX Wurst videos](https://www.youtube.com/c/wizardhax/videos) in case the channel is ever taken down
-- just spreading the word, telling people about Wurst, etc.
-- expanding this list with more things that people can do to help (This is all I could think of for now.)
+本项目特别欢迎以下翻译相关的贡献：
+
+- **修正翻译错误**：发现不准确的中文翻译，请提交修复
+- **补充遗漏翻译**：发现仍有英文文字未翻译，请提交补充
+- **改进翻译质量**：使翻译更加自然、准确、符合游戏术语习惯
+- **添加新功能的翻译**：如果上游项目添加了新功能，需要同步翻译
+
+### 翻译文件位置
+
+- **功能描述翻译**：`src/main/resources/assets/wurst/translations/zh_cn.json`
+- **功能名称翻译**：`src/main/java/net/wurstclient/hack/Hack.java` 中的 `CHINESE_NAMES` 映射
+- **设置名称翻译**：`src/main/java/net/wurstclient/settings/Setting.java` 中的 `DISPLAY_NAMES` 映射
+- **分类名称翻译**：`src/main/java/net/wurstclient/Category.java` 中的 `displayName` 字段
+
+## 其他贡献方式
+
+- 报告翻译错误或遗漏
+- 测试不同 Minecraft 版本的兼容性
+- 编写使用教程
+- 分享本项目给需要中文界面的玩家
