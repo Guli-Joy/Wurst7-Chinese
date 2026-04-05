@@ -70,7 +70,7 @@ public final class ClickGui
 		
 		LinkedHashMap<Category, Window> windowMap = new LinkedHashMap<>();
 		for(Category category : Category.values())
-			windowMap.put(category, new Window(category.getName()));
+			windowMap.put(category, new Window(category.getDisplayName()));
 		
 		ArrayList<Feature> features = new ArrayList<>();
 		features.addAll(WURST.getHax().getAllHax());
@@ -83,7 +83,7 @@ public final class ClickGui
 			
 		windows.addAll(windowMap.values());
 		
-		Window uiSettings = new Window("UI Settings");
+		Window uiSettings = new Window("界面设置");
 		uiSettings.add(new FeatureButton(WURST.getOtfs().wurstLogoOtf));
 		uiSettings.add(new FeatureButton(WURST.getOtfs().hackListOtf));
 		uiSettings.add(new FeatureButton(WURST.getOtfs().keybindManagerOtf));
