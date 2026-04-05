@@ -67,30 +67,30 @@ public final class EditItemListScreen extends Screen
 		itemNameField.setMaxLength(256);
 		
 		addRenderableWidget(
-			addButton = Button.builder(Component.literal("Add"), b -> {
+			addButton = Button.builder(Component.literal("添加"), b -> {
 				itemList.add(itemToAdd);
 				minecraft.setScreen(EditItemListScreen.this);
 			}).bounds(width / 2 - 2, height - 56, 30, 20).build());
 		
 		addRenderableWidget(removeButton =
-			Button.builder(Component.literal("Remove Selected"), b -> {
+			Button.builder(Component.literal("移除选中"), b -> {
 				itemList.remove(itemList.getItemNames()
 					.indexOf(listGui.getSelectedBlockName()));
 				minecraft.setScreen(EditItemListScreen.this);
 			}).bounds(width / 2 + 52, height - 56, 100, 20).build());
 		
 		addRenderableWidget(
-			Button.builder(Component.literal("Reset to Defaults"),
+			Button.builder(Component.literal("重置为默认"),
 				b -> minecraft.setScreen(new ConfirmScreen(b2 -> {
 					if(b2)
 						itemList.resetToDefaults();
 					minecraft.setScreen(EditItemListScreen.this);
-				}, Component.literal("Reset to Defaults"),
+				}, Component.literal("重置为默认"),
 					Component.literal("Are you sure?"))))
 				.bounds(width - 108, 8, 100, 20).build());
 		
 		addRenderableWidget(doneButton = Button
-			.builder(Component.literal("Done"),
+			.builder(Component.literal("完成"),
 				b -> minecraft.setScreen(prevScreen))
 			.bounds(width / 2 - 100, height - 28, 200, 20).build());
 	}

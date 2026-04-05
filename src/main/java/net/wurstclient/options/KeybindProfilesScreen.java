@@ -65,7 +65,7 @@ public final class KeybindProfilesScreen extends Screen
 				.bounds(width / 2 - 50, height - 48, 100, 20).build());
 		
 		addRenderableWidget(Button
-			.builder(Component.literal("Cancel"),
+			.builder(Component.literal("取消"),
 				b -> minecraft.setScreen(prevScreen))
 			.bounds(width / 2 + 54, height - 48, 100, 20).build());
 	}

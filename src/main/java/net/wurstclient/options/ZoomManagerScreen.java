@@ -39,7 +39,7 @@ public class ZoomManagerScreen extends Screen implements PressAKeyCallback
 		CheckboxSetting scroll = zoom.getScrollSetting();
 		
 		addRenderableWidget(Button
-			.builder(Component.literal("Back"),
+			.builder(Component.literal("返回"),
 				b -> minecraft.setScreen(prevScreen))
 			.bounds(width / 2 - 100, height / 4 + 144 - 16, 200, 20).build());
 		
@@ -100,7 +100,7 @@ public class ZoomManagerScreen extends Screen implements PressAKeyCallback
 		ZoomOtf zoom = WurstClient.INSTANCE.getOtfs().zoomOtf;
 		SliderSetting level = zoom.getLevelSetting();
 		
-		context.drawCenteredString(font, "Zoom Manager", width / 2, 40,
+		context.drawCenteredString(font, "缩放管理器", width / 2, 40,
 			CommonColors.WHITE);
 		context.drawString(font, "Zoom Level: " + level.getValueString(),
 			width / 2 - 75, height / 4 + 44, WurstColors.VERY_LIGHT_GRAY);

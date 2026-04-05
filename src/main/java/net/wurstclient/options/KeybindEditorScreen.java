@@ -59,11 +59,11 @@ public final class KeybindEditorScreen extends Screen
 			.bounds(width / 2 - 100, 60, 200, 20).build());
 		
 		addRenderableWidget(
-			Button.builder(Component.literal("Save"), b -> save())
+			Button.builder(Component.literal("保存"), b -> save())
 				.bounds(width / 2 - 100, height / 4 + 72, 200, 20).build());
 		
 		addRenderableWidget(Button
-			.builder(Component.literal("Cancel"),
+			.builder(Component.literal("取消"),
 				b -> minecraft.setScreen(prevScreen))
 			.bounds(width / 2 - 100, height / 4 + 96, 200, 20).build());
 		
