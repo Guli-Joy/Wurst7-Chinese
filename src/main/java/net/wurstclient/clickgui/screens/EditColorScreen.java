@@ -120,7 +120,7 @@ public final class EditColorScreen extends Screen
 		hexValueField.setCursorPosition(0);
 		hexValueField.setHighlightPos(6);
 		
-		doneButton = Button.builder(Component.literal("Done"), b -> done())
+		doneButton = Button.builder(Component.literal("完成"), b -> done())
 			.bounds(fieldsX, height - 30, 200, 20).build();
 		addRenderableWidget(doneButton);
 	}

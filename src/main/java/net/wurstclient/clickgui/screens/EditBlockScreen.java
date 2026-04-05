@@ -59,7 +59,7 @@ public final class EditBlockScreen extends Screen
 		setFocused(blockField);
 		blockField.setFocused(true);
 		
-		doneButton = Button.builder(Component.literal("Done"), b -> done())
+		doneButton = Button.builder(Component.literal("完成"), b -> done())
 			.bounds(x1, y2, 200, 20).build();
 		addRenderableWidget(doneButton);
 	}

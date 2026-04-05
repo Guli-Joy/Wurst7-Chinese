@@ -47,24 +47,24 @@ public final class KeybindManagerScreen extends Screen
 		addWidget(listGui);
 		
 		addRenderableWidget(addButton = Button
-			.builder(Component.literal("Add"),
+			.builder(Component.literal("添加"),
 				b -> minecraft.setScreen(new KeybindEditorScreen(this)))
 			.bounds(width / 2 - 102, height - 52, 100, 20).build());
 		
 		addRenderableWidget(
-			editButton = Button.builder(Component.literal("Edit"), b -> edit())
+			editButton = Button.builder(Component.literal("编辑"), b -> edit())
 				.bounds(width / 2 + 2, height - 52, 100, 20).build());
 		
 		addRenderableWidget(removeButton =
-			Button.builder(Component.literal("Remove"), b -> remove())
+			Button.builder(Component.literal("移除"), b -> remove())
 				.bounds(width / 2 - 102, height - 28, 100, 20).build());
 		
 		addRenderableWidget(backButton = Button
-			.builder(Component.literal("Back"),
+			.builder(Component.literal("返回"),
 				b -> minecraft.setScreen(prevScreen))
 			.bounds(width / 2 + 2, height - 28, 100, 20).build());
 		
-		addRenderableWidget(Button.builder(Component.literal("Reset Keybinds"),
+		addRenderableWidget(Button.builder(Component.literal("重置快捷键"),
 			b -> minecraft.setScreen(new ConfirmScreen(confirmed -> {
 				if(confirmed)
 					WurstClient.INSTANCE.getKeybinds()
@@ -76,7 +76,7 @@ public final class KeybindManagerScreen extends Screen
 			.bounds(8, 8, 100, 20).build());
 		
 		addRenderableWidget(Button
-			.builder(Component.literal("Profiles..."),
+			.builder(Component.literal("配置文件..."),
 				b -> minecraft.setScreen(new KeybindProfilesScreen(this)))
 			.bounds(width - 108, 8, 100, 20).build());
 	}
@@ -143,11 +143,11 @@ public final class KeybindManagerScreen extends Screen
 		renderBackground(context, mouseX, mouseY, partialTicks);
 		listGui.render(context, mouseX, mouseY, partialTicks);
 		
-		context.drawCenteredString(font, "Keybind Manager", width / 2, 8,
+		context.drawCenteredString(font, "快捷键管理器", width / 2, 8,
 			0xFFFFFF);
 		
 		int count = WurstClient.INSTANCE.getKeybinds().getAllKeybinds().size();
-		context.drawCenteredString(font, "Keybinds: " + count, width / 2, 20,
+		context.drawCenteredString(font, "快捷键数: " + count, width / 2, 20,
 			0xFFFFFF);
 		
 		for(Renderable drawable : renderables)
@@ -185,10 +185,10 @@ public final class KeybindManagerScreen extends Screen
 			Font tr = minecraft.font;
 			
 			String keyText =
-				"Key: " + keybind.getKey().replace("key.keyboard.", "");
+				"按键: " + keybind.getKey().replace("key.keyboard.", "");
 			context.drawString(tr, keyText, x + 3, y + 3, 0xA0A0A0, false);
 			
-			String cmdText = "Commands: " + keybind.getCommands();
+			String cmdText = "命令: " + keybind.getCommands();
 			context.drawString(tr, cmdText, x + 3, y + 15, 0xA0A0A0, false);
 		}
 	}
