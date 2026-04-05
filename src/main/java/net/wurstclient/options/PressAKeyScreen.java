@@ -56,7 +56,7 @@ public class PressAKeyScreen extends Screen
 	public void render(DrawContext context, int mouseX, int mouseY,
 		float partialTicks)
 	{
-		context.drawCenteredTextWithShadow(textRenderer, "Press a key",
+		context.drawCenteredTextWithShadow(textRenderer, "按下一个键",
 			width / 2, height / 4 + 48, Colors.WHITE);
 		
 		for(Drawable drawable : drawables)

@@ -50,23 +50,23 @@ public final class KeybindManagerScreen extends Screen
 		addSelectableChild(listGui);
 		
 		addDrawableChild(addButton = ButtonWidget
-			.builder(Text.literal("Add"),
+			.builder(Text.literal("添加"),
 				b -> client.setScreen(new KeybindEditorScreen(this)))
 			.dimensions(width / 2 - 102, height - 52, 100, 20).build());
 		
 		addDrawableChild(
-			editButton = ButtonWidget.builder(Text.literal("Edit"), b -> edit())
+			editButton = ButtonWidget.builder(Text.literal("编辑"), b -> edit())
 				.dimensions(width / 2 + 2, height - 52, 100, 20).build());
 		
 		addDrawableChild(removeButton =
-			ButtonWidget.builder(Text.literal("Remove"), b -> remove())
+			ButtonWidget.builder(Text.literal("移除"), b -> remove())
 				.dimensions(width / 2 - 102, height - 28, 100, 20).build());
 		
 		addDrawableChild(backButton = ButtonWidget
-			.builder(Text.literal("Back"), b -> client.setScreen(prevScreen))
+			.builder(Text.literal("返回"), b -> client.setScreen(prevScreen))
 			.dimensions(width / 2 + 2, height - 28, 100, 20).build());
 		
-		addDrawableChild(ButtonWidget.builder(Text.literal("Reset Keybinds"),
+		addDrawableChild(ButtonWidget.builder(Text.literal("重置快捷键"),
 			b -> client.setScreen(new ConfirmScreen(confirmed -> {
 				if(confirmed)
 					WurstClient.INSTANCE.getKeybinds()
@@ -77,7 +77,7 @@ public final class KeybindManagerScreen extends Screen
 			.dimensions(8, 8, 100, 20).build());
 		
 		addDrawableChild(ButtonWidget
-			.builder(Text.literal("Profiles..."),
+			.builder(Text.literal("配置文件..."),
 				b -> client.setScreen(new KeybindProfilesScreen(this)))
 			.dimensions(width - 108, 8, 100, 20).build());
 	}
@@ -143,11 +143,11 @@ public final class KeybindManagerScreen extends Screen
 	{
 		listGui.render(context, mouseX, mouseY, partialTicks);
 		
-		context.drawCenteredTextWithShadow(textRenderer, "Keybind Manager",
+		context.drawCenteredTextWithShadow(textRenderer, "快捷键管理器",
 			width / 2, 8, Colors.WHITE);
 		
 		int count = WurstClient.INSTANCE.getKeybinds().getAllKeybinds().size();
-		context.drawCenteredTextWithShadow(textRenderer, "Keybinds: " + count,
+		context.drawCenteredTextWithShadow(textRenderer, "快捷键数: " + count,
 			width / 2, 20, Colors.WHITE);
 		
 		for(Drawable drawable : drawables)
@@ -186,11 +186,11 @@ public final class KeybindManagerScreen extends Screen
 			TextRenderer tr = client.textRenderer;
 			
 			String keyText =
-				"Key: " + keybind.getKey().replace("key.keyboard.", "");
+				"按键: " + keybind.getKey().replace("key.keyboard.", "");
 			context.drawText(tr, keyText, x + 3, y + 3,
 				WurstColors.VERY_LIGHT_GRAY, false);
 			
-			String cmdText = "Commands: " + keybind.getCommands();
+			String cmdText = "命令: " + keybind.getCommands();
 			context.drawText(tr, cmdText, x + 3, y + 15, Colors.LIGHT_GRAY,
 				false);
 		}
