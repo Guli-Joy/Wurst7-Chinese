@@ -98,9 +98,9 @@ public final class AutoFishHack extends Hack
 	public String getRenderName()
 	{
 		if(rodSelector.isOutOfRods())
-			return getName() + " [out of rods]";
+			return getDisplayName() + " [没有鱼竿]";
 		
-		return getName();
+		return getDisplayName();
 	}
 	
 	@Override

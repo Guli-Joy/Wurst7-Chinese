@@ -27,7 +27,7 @@ public final class StepHack extends Hack implements UpdateListener
 		Mode.values(), Mode.LEGIT);
 	
 	private final SliderSetting height =
-		new SliderSetting("Height", "Only works in \u00a7lSimple\u00a7r mode.",
+		new SliderSetting("Altitude", "Only works in \u00a7lSimple\u00a7r mode.",
 			1, 1, 10, 1, ValueDisplay.INTEGER);
 	
 	public StepHack()

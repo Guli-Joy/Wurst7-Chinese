@@ -36,13 +36,13 @@ public class ZoomManagerScreen extends Screen implements PressAKeyCallback
 		CheckboxSetting scroll = zoom.getScrollSetting();
 		
 		addDrawableChild(ButtonWidget
-			.builder(Text.literal("Back"), b -> client.setScreen(prevScreen))
+			.builder(Text.literal("返回"), b -> client.setScreen(prevScreen))
 			.dimensions(width / 2 - 100, height / 4 + 144 - 16, 200, 20)
 			.build());
 		
 		addDrawableChild(ButtonWidget
 			.builder(
-				Text.literal("Zoom Key: ")
+				Text.literal("缩放键: ")
 					.append(zoom.getTranslatedKeybindName()),
 				b -> client.setScreen(new PressAKeyScreen(this)))
 			.dimensions(width / 2 - 79, height / 4 + 24 - 16, 158, 20).build());
@@ -99,7 +99,7 @@ public class ZoomManagerScreen extends Screen implements PressAKeyCallback
 		SliderSetting level = zoom.getLevelSetting();
 		
 		renderBackground(context);
-		context.drawCenteredTextWithShadow(textRenderer, "Zoom Manager",
+		context.drawCenteredTextWithShadow(textRenderer, "缩放管理器",
 			width / 2, 40, 0xffffff);
 		context.drawTextWithShadow(textRenderer,
 			"Zoom Level: " + level.getValueString(), width / 2 - 75,

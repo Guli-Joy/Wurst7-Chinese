@@ -42,7 +42,7 @@ public class WurstOptionsScreen extends Screen
 	public void init()
 	{
 		addDrawableChild(ButtonWidget
-			.builder(Text.literal("Back"), b -> client.setScreen(prevScreen))
+			.builder(Text.literal("返回"), b -> client.setScreen(prevScreen))
 			.dimensions(width / 2 - 100, height / 4 + 144 - 16, 200, 20)
 			.build());
 		
@@ -62,34 +62,34 @@ public class WurstOptionsScreen extends Screen
 			wurst.getOtfs().translationsOtf.getForceEnglish();
 		
 		new WurstOptionsButton(-154, 24,
-			() -> "Click Friends: "
-				+ (middleClickFriends.isChecked() ? "ON" : "OFF"),
+			() -> "点击好友: "
+				+ (middleClickFriends.isChecked() ? "开" : "关"),
 			middleClickFriends.getWrappedDescription(200),
 			b -> middleClickFriends
 				.setChecked(!middleClickFriends.isChecked()));
 		
 		new WurstOptionsButton(-154, 48,
-			() -> "Count Users: " + (plausible.isEnabled() ? "ON" : "OFF"),
-			"Counts how many people are using Wurst and which versions are the"
-				+ " most popular. This data helps me to decide when I can stop"
-				+ " supporting old versions.\n\n"
-				+ "These statistics are completely anonymous, never sold, and"
-				+ " stay in the EU (I'm self-hosting Plausible in Germany)."
-				+ " There are no cookies or persistent identifiers"
-				+ " (see plausible.io).",
+			() -> "用户统计: " + (plausible.isEnabled() ? "开" : "关"),
+			"统计有多少人在使用 Wurst 以及哪些版本最受欢迎。"
+				+ " 这些数据帮助开发者决定何时停止"
+				+ " 支持旧版本。\n\n"
+				+ "这些统计完全匿名，不会被出售，"
+				+ " 且保存在欧盟（开发者在德国自托管 Plausible）。"
+				+ " 没有 Cookie 或持久标识符"
+				+ "（参见 plausible.io）。",
 			b -> plausible.setEnabled(!plausible.isEnabled()));
 		
 		new WurstOptionsButton(-154, 72,
-			() -> "Spoof Vanilla: "
-				+ (vanillaSpoofOtf.isEnabled() ? "ON" : "OFF"),
+			() -> "伪装原版: "
+				+ (vanillaSpoofOtf.isEnabled() ? "开" : "关"),
 			vanillaSpoofOtf.getDescription(),
 			b -> vanillaSpoofOtf.doPrimaryAction());
 		
 		new WurstOptionsButton(-154, 96,
-			() -> "Translations: " + (!forceEnglish.isChecked() ? "ON" : "OFF"),
-			"Allows text in Wurst to be displayed in other languages than"
-				+ " English. It will use the same language that Minecraft is"
-				+ " set to.\n\n" + "This is an experimental feature!",
+			() -> "翻译: " + (!forceEnglish.isChecked() ? "开" : "关"),
+			"允许 Wurst 中的文字以其他语言显示。"
+				+ " 它将使用与 Minecraft 相同的语言"
+				+ " 设置。\n\n这是一个实验性功能！",
 			b -> forceEnglish.setChecked(!forceEnglish.isChecked()));
 	}
 	
@@ -97,18 +97,18 @@ public class WurstOptionsScreen extends Screen
 	{
 		XRayHack xRayHack = WurstClient.INSTANCE.getHax().xRayHack;
 		
-		new WurstOptionsButton(-50, 24, () -> "Keybinds",
-			"Keybinds allow you to toggle any hack or command by simply"
-				+ " pressing a button.",
+		new WurstOptionsButton(-50, 24, () -> "快捷键",
+			"快捷键允许你只需按下按钮即可"
+				+ " 切换任何功能或命令。",
 			b -> client.setScreen(new KeybindManagerScreen(this)));
 		
-		new WurstOptionsButton(-50, 48, () -> "X-Ray Blocks",
-			"Manager for the blocks that X-Ray will show.",
+		new WurstOptionsButton(-50, 48, () -> "透视方块",
+			"管理透视功能显示的方块。",
 			b -> xRayHack.openBlockListEditor(this));
 		
-		new WurstOptionsButton(-50, 72, () -> "Zoom",
-			"The Zoom Manager allows you to change the zoom key and how far it"
-				+ " will zoom in.",
+		new WurstOptionsButton(-50, 72, () -> "缩放",
+			"缩放管理器允许你更改缩放键和"
+				+ " 缩放倍数。",
 			b -> client.setScreen(new ZoomManagerScreen(this)));
 	}
 	
@@ -116,25 +116,25 @@ public class WurstOptionsScreen extends Screen
 	{
 		OperatingSystem os = Util.getOperatingSystem();
 		
-		new WurstOptionsButton(54, 24, () -> "Official Website",
+		new WurstOptionsButton(54, 24, () -> "官方网站",
 			"§n§lWurstClient.net",
 			b -> os.open("https://www.wurstclient.net/options-website/"));
 		
-		new WurstOptionsButton(54, 48, () -> "Wurst Wiki", "§n§lWurst.Wiki",
+		new WurstOptionsButton(54, 48, () -> "Wurst百科", "§n§lWurst.Wiki",
 			b -> os.open("https://www.wurstclient.net/options-wiki/"));
 		
-		new WurstOptionsButton(54, 72, () -> "WurstForum", "§n§lWurstForum.net",
+		new WurstOptionsButton(54, 72, () -> "Wurst论坛", "§n§lWurstForum.net",
 			b -> os.open("https://www.wurstclient.net/options-forum/"));
 		
-		new WurstOptionsButton(54, 96, () -> "Twitter", "@Wurst_Imperium",
+		new WurstOptionsButton(54, 96, () -> "推特", "@Wurst_Imperium",
 			b -> os.open("https://www.wurstclient.net/options-twitter/"));
 		
-		new WurstOptionsButton(54, 120, () -> "Donate",
+		new WurstOptionsButton(54, 120, () -> "捐赠",
 			"§n§lWurstClient.net/donate\n"
-				+ "Donate now to help me keep the Wurst Client alive and free"
-				+ " to use for everyone.\n\n"
-				+ "Every bit helps and is much appreciated! You can also get a"
-				+ " few cool perks in return.",
+				+ "捐赠以帮助开发者维持 Wurst Client 的运营"
+				+ " 并保持对所有人免费。\n\n"
+				+ "每一点帮助都非常感谢！你还可以"
+				+ " 获得一些很酷的回报。",
 			b -> os.open("https://www.wurstclient.net/options-donate/"));
 	}
 	
@@ -161,14 +161,14 @@ public class WurstOptionsScreen extends Screen
 		int y1 = 40;
 		int y2 = height / 4 + 24 - 28;
 		
-		context.drawCenteredTextWithShadow(tr, "Wurst Options", middleX, y1,
+		context.drawCenteredTextWithShadow(tr, "Wurst 选项", middleX, y1,
 			0xffffff);
 		
-		context.drawCenteredTextWithShadow(tr, "Settings", middleX - 104, y2,
+		context.drawCenteredTextWithShadow(tr, "设置", middleX - 104, y2,
 			0xcccccc);
-		context.drawCenteredTextWithShadow(tr, "Managers", middleX, y2,
+		context.drawCenteredTextWithShadow(tr, "管理器", middleX, y2,
 			0xcccccc);
-		context.drawCenteredTextWithShadow(tr, "Links", middleX + 104, y2,
+		context.drawCenteredTextWithShadow(tr, "链接", middleX + 104, y2,
 			0xcccccc);
 	}
 	

@@ -30,7 +30,7 @@ public class NavigatorRemoveKeybindScreen extends NavigatorScreen
 	private TreeMap<String, PossibleKeybind> existingKeybinds;
 	private String hoveredKey = "";
 	private String selectedKey = "";
-	private String text = "Select the keybind you want to remove.";
+	private String text = "选择你要删除的快捷键。";
 	private ButtonWidget removeButton;
 	
 	public NavigatorRemoveKeybindScreen(

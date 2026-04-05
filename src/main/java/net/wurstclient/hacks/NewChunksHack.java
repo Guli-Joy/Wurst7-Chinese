@@ -133,9 +133,9 @@ public final class NewChunksHack extends Hack
 	public String getRenderName()
 	{
 		if(!showCounter.isChecked())
-			return getName();
+			return getDisplayName();
 		
-		return String.format("%s [%d/%d]", getName(), newChunks.size(),
+		return String.format("%s [%d/%d]", getDisplayName(), newChunks.size(),
 			oldChunks.size());
 	}
 	

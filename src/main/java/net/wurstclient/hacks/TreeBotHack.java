@@ -87,15 +87,15 @@ public final class TreeBotHack extends Hack
 	public String getRenderName()
 	{
 		if(treeFinder != null && !treeFinder.isDone() && !treeFinder.isFailed())
-			return getName() + " [Searching]";
+			return getDisplayName() + " [搜索中]";
 		
 		if(processor != null && !processor.isDone())
-			return getName() + " [Going]";
+			return getDisplayName() + " [Going]";
 		
 		if(tree != null && !tree.getLogs().isEmpty())
-			return getName() + " [Chopping]";
+			return getDisplayName() + " [Chopping]";
 		
-		return getName();
+		return getDisplayName();
 	}
 	
 	@Override

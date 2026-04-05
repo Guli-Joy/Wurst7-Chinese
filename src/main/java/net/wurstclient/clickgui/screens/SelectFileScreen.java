@@ -56,11 +56,11 @@ public final class SelectFileScreen extends Screen
 			.dimensions(width - 108, 8, 100, 20).build());
 		
 		doneButton = addDrawableChild(
-			ButtonWidget.builder(Text.literal("Done"), b -> done())
+			ButtonWidget.builder(Text.literal("完成"), b -> done())
 				.dimensions(width / 2 - 102, height - 48, 100, 20).build());
 		
 		addDrawableChild(
-			ButtonWidget.builder(Text.literal("Cancel"), b -> openPrevScreen())
+			ButtonWidget.builder(Text.literal("取消"), b -> openPrevScreen())
 				.dimensions(width / 2 + 2, height - 48, 100, 20).build());
 	}
 	

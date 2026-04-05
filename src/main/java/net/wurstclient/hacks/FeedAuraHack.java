@@ -49,7 +49,7 @@ public final class FeedAuraHack extends Hack
 		5, 1, 10, 0.05, ValueDisplay.DECIMAL);
 	
 	private final FilterBabiesSetting filterBabies =
-		new FilterBabiesSetting("Won't feed baby animals.\n"
+		new FilterBabiesSetting("不会喂养幼年动物。\n"
 			+ "Saves food, but doesn't speed up baby growth.", true);
 	
 	private final CheckboxSetting filterUntamed =

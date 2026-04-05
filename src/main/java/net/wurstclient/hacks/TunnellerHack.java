@@ -97,8 +97,8 @@ public final class TunnellerHack extends Hack
 	public String getRenderName()
 	{
 		if(limit.getValueI() == 0)
-			return getName();
-		return getName() + " [" + length + "/" + limit.getValueI() + "]";
+			return getDisplayName();
+		return getDisplayName() + " [" + length + "/" + limit.getValueI() + "]";
 	}
 	
 	@Override

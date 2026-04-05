@@ -60,7 +60,7 @@ public final class NukerHack extends Hack
 	@Override
 	public String getRenderName()
 	{
-		return getName() + commonSettings.getRenderNameSuffix();
+		return getDisplayName() + commonSettings.getRenderNameSuffix();
 	}
 	
 	@Override

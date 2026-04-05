@@ -71,7 +71,7 @@ public final class ExcavatorHack extends Hack
 	@Override
 	public String getRenderName()
 	{
-		String name = getName();
+		String name = getDisplayName();
 		
 		if(step == Step.EXCAVATE && area != null)
 		{

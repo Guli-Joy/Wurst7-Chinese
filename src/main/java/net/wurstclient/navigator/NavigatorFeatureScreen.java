@@ -192,10 +192,10 @@ public final class NavigatorFeatureScreen extends NavigatorScreen
 							noKeybindsSet = false;
 						text +=
 							"\n" + keybind.getKey().replace("key.keyboard.", "")
-								+ ": " + "Toggle " + feature.getName();
+								+ ": " + "切换 " + feature.getName();
 						existingKeybinds.put(keybind.getKey(),
 							new PossibleKeybind(command,
-								"Toggle " + feature.getName()));
+								"切换 " + feature.getName()));
 					}
 				}
 			}

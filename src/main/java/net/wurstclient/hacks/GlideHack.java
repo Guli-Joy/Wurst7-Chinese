@@ -56,12 +56,12 @@ public final class GlideHack extends Hack
 	{
 		ClientPlayerEntity player = MC.player;
 		if(player == null)
-			return getName();
+			return getDisplayName();
 		
 		if(pauseOnSneak.isChecked() && player.isSneaking())
-			return getName() + " (paused)";
+			return getDisplayName() + " (paused)";
 		
-		return getName();
+		return getDisplayName();
 	}
 	
 	@Override

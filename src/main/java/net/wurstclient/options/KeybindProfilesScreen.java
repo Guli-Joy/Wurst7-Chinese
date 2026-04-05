@@ -133,7 +133,7 @@ public final class KeybindProfilesScreen extends Screen
 		listGui.render(context, mouseX, mouseY, partialTicks);
 		
 		context.drawCenteredTextWithShadow(client.textRenderer,
-			"Keybind Profiles", width / 2, 12, 0xffffff);
+			"快捷键配置文件", width / 2, 12, 0xffffff);
 		
 		super.render(context, mouseX, mouseY, partialTicks);
 		

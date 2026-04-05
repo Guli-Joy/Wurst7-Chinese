@@ -49,7 +49,7 @@ public final class HackListOtf extends OtherFeature
 	private final CheckboxSetting revSort =
 		new CheckboxSetting("Reverse sorting", false);
 	
-	private final CheckboxSetting animations = new CheckboxSetting("Animations",
+	private final CheckboxSetting animations = new CheckboxSetting("动画",
 		"When enabled, entries slide into and out of the HackList as hacks are enabled and disabled.",
 		true);
 	
@@ -122,9 +122,9 @@ public final class HackListOtf extends OtherFeature
 	
 	public static enum Mode
 	{
-		AUTO("Auto"),
+		AUTO("自动"),
 		
-		COUNT("Count"),
+		COUNT("数量"),
 		
 		HIDDEN("Hidden");
 		
@@ -144,9 +144,9 @@ public final class HackListOtf extends OtherFeature
 	
 	public static enum Position
 	{
-		LEFT("Left"),
+		LEFT("左"),
 		
-		RIGHT("Right");
+		RIGHT("右");
 		
 		private final String name;
 		
@@ -164,9 +164,9 @@ public final class HackListOtf extends OtherFeature
 	
 	public static enum SortBy
 	{
-		NAME("Name", (a, b) -> a.getName().compareToIgnoreCase(b.getName())),
+		NAME("名称", (a, b) -> a.getName().compareToIgnoreCase(b.getName())),
 		
-		WIDTH("Width", Comparator.comparingInt(
+		WIDTH("宽度", Comparator.comparingInt(
 			h -> WurstClient.MC.textRenderer.getWidth(h.getRenderName())));
 		
 		private final String name;

@@ -49,15 +49,15 @@ public final class KeybindEditorScreen extends Screen
 	public void init()
 	{
 		addDrawableChild(ButtonWidget
-			.builder(Text.literal("Change Key"),
+			.builder(Text.literal("更改按键"),
 				b -> client.setScreen(new PressAKeyScreen(this)))
 			.dimensions(width / 2 - 100, 60, 200, 20).build());
 		
-		addDrawableChild(ButtonWidget.builder(Text.literal("Save"), b -> save())
+		addDrawableChild(ButtonWidget.builder(Text.literal("保存"), b -> save())
 			.dimensions(width / 2 - 100, height / 4 + 72, 200, 20).build());
 		
 		addDrawableChild(ButtonWidget
-			.builder(Text.literal("Cancel"), b -> client.setScreen(prevScreen))
+			.builder(Text.literal("取消"), b -> client.setScreen(prevScreen))
 			.dimensions(width / 2 - 100, height / 4 + 96, 200, 20).build());
 		
 		commandField = new TextFieldWidget(textRenderer, width / 2 - 100, 100,
@@ -104,7 +104,7 @@ public final class KeybindEditorScreen extends Screen
 			0xffffff);
 		
 		context.drawTextWithShadow(textRenderer,
-			"Key: " + key.replace("key.keyboard.", ""), width / 2 - 100, 47,
+			"按键: " + key.replace("key.keyboard.", ""), width / 2 - 100, 47,
 			0xa0a0a0);
 		context.drawTextWithShadow(textRenderer, "Commands (separated by ';')",
 			width / 2 - 100, 87, 0xa0a0a0);

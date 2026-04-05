@@ -30,9 +30,9 @@ public final class OpenWaterEspHack extends Hack implements RenderListener
 	{
 		FishingBobberEntity bobber = MC.player.fishHook;
 		if(bobber == null)
-			return getName();
+			return getDisplayName();
 		
-		return getName() + (isInOpenWater(bobber) ? " [open]" : " [shallow]");
+		return getDisplayName() + (isInOpenWater(bobber) ? " [open]" : " [shallow]");
 	}
 	
 	@Override

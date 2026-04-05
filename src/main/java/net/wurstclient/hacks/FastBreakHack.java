@@ -60,8 +60,8 @@ public final class FastBreakHack extends Hack
 	public String getRenderName()
 	{
 		if(legitMode.isChecked())
-			return getName() + "Legit";
-		return getName();
+			return getDisplayName() + "合法模式";
+		return getDisplayName();
 	}
 	
 	@Override

@@ -12,6 +12,7 @@ import java.util.Objects;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawContext;
 import net.wurstclient.Feature;
+import net.wurstclient.hack.Hack;
 import net.wurstclient.clickgui.ClickGui;
 import net.wurstclient.clickgui.ClickGuiIcons;
 import net.wurstclient.clickgui.Component;
@@ -55,7 +56,7 @@ public final class FeatureButton extends Component
 		TooManyHaxHack tooManyHax = WURST.getHax().tooManyHaxHack;
 		if(tooManyHax.isEnabled() && tooManyHax.isBlocked(feature))
 		{
-			ChatUtils.error(feature.getName() + " is blocked by TooManyHax.");
+			ChatUtils.error(feature.getName() + " 已被功能限制屏蔽。");
 			return;
 		}
 		
@@ -116,7 +117,7 @@ public final class FeatureButton extends Component
 				y2 - 0.5F, hSettings, !isSettingsWindowOpen());
 		
 		// text
-		String name = feature.getName();
+		String name = feature instanceof Hack ? Hack.getChineseName(feature.getName()) : Hack.getChineseName(feature.getName());
 		int tx = x1 + (x3 - x1 - TR.getWidth(name)) / 2;
 		int ty = y1 + 2;
 		context.drawText(TR, name, tx, ty, GUI.getTxtColor(), false);
@@ -132,7 +133,7 @@ public final class FeatureButton extends Component
 	@Override
 	public int getDefaultWidth()
 	{
-		int width = TR.getWidth(feature.getName());
+		int width = TR.getWidth(Hack.getChineseName(feature.getName()));
 		width += hasSettings ? 15 : 4;
 		return width;
 	}

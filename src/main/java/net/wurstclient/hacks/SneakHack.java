@@ -47,7 +47,7 @@ public final class SneakHack extends Hack
 	@Override
 	public String getRenderName()
 	{
-		return getName() + " [" + mode.getSelected() + "]";
+		return getDisplayName() + " [" + mode.getSelected() + "]";
 	}
 	
 	@Override

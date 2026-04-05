@@ -68,7 +68,7 @@ public final class FollowHack extends Hack
 	public String getRenderName()
 	{
 		if(entity != null)
-			return "Following " + entity.getName().getString();
+			return "正在跟随 " + entity.getDisplayName().getString();
 		return "Follow";
 	}
 	

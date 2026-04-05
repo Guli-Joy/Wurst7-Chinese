@@ -43,7 +43,7 @@ public class ServerFinderScreen extends Screen
 	
 	public ServerFinderScreen(MultiplayerScreen prevScreen)
 	{
-		super(Text.literal("Server Finder"));
+		super(Text.literal("服务器搜索"));
 		this.prevScreen = prevScreen;
 	}
 	
@@ -51,21 +51,21 @@ public class ServerFinderScreen extends Screen
 	public void init()
 	{
 		addDrawableChild(searchButton =
-			ButtonWidget.builder(Text.literal("Search"), b -> searchOrCancel())
+			ButtonWidget.builder(Text.literal("搜索"), b -> searchOrCancel())
 				.dimensions(width / 2 - 100, height / 4 + 96 + 12, 200, 20)
 				.build());
 		searchButton.active = false;
 		
 		addDrawableChild(
 			ButtonWidget
-				.builder(Text.literal("Tutorial"),
+				.builder(Text.literal("教程"),
 					b -> Util.getOperatingSystem().open(
 						"https://www.wurstclient.net/serverfinder-tutorial/"))
 				.dimensions(width / 2 - 100, height / 4 + 120 + 12, 200, 20)
 				.build());
 		
 		addDrawableChild(
-			ButtonWidget.builder(Text.literal("Back"), b -> close())
+			ButtonWidget.builder(Text.literal("返回"), b -> close())
 				.dimensions(width / 2 - 100, height / 4 + 144 + 12, 200, 20)
 				.build());
 		
@@ -91,7 +91,7 @@ public class ServerFinderScreen extends Screen
 			state = ServerFinderState.CANCELLED;
 			ipBox.active = true;
 			maxThreadsBox.active = true;
-			searchButton.setMessage(Text.literal("Search"));
+			searchButton.setMessage(Text.literal("搜索"));
 			return;
 		}
 		
@@ -99,11 +99,11 @@ public class ServerFinderScreen extends Screen
 		maxThreads = Integer.parseInt(maxThreadsBox.getText());
 		ipBox.active = false;
 		maxThreadsBox.active = false;
-		searchButton.setMessage(Text.literal("Cancel"));
+		searchButton.setMessage(Text.literal("取消"));
 		checked = 0;
 		working = 0;
 		
-		new Thread(this::findServers, "Server Finder").start();
+		new Thread(this::findServers, "服务器搜索").start();
 	}
 	
 	private void findServers()
@@ -236,7 +236,7 @@ public class ServerFinderScreen extends Screen
 	{
 		renderBackground(context);
 		
-		context.drawCenteredTextWithShadow(textRenderer, "Server Finder",
+		context.drawCenteredTextWithShadow(textRenderer, "服务器搜索",
 			width / 2, 20, Colors.WHITE);
 		context.drawCenteredTextWithShadow(textRenderer,
 			"This will search for servers with similar IPs", width / 2, 40,

@@ -159,7 +159,7 @@ public final class SliderComponent extends Component
 		matrices.pop();
 		
 		// text
-		String name = setting.getName();
+		String name = setting.getDisplayName();
 		String value = setting.getValueString();
 		int valueWidth = TR.getWidth(value);
 		int txtColor = GUI.getTxtColor();
@@ -172,10 +172,10 @@ public final class SliderComponent extends Component
 		String tooltip = setting.getWrappedDescription(200);
 		
 		if(setting.isDisabled())
-			tooltip += "\n\nThis slider is disabled.";
+			tooltip += "\n\n此滑块已禁用。";
 		else if(setting.isLocked())
 		{
-			tooltip += "\n\nThis slider is locked to ";
+			tooltip += "\n\n此滑块已锁定为 ";
 			tooltip += setting.getValueString() + ".";
 		}
 		
@@ -185,15 +185,15 @@ public final class SliderComponent extends Component
 	private String getSliderTooltip()
 	{
 		String tooltip =
-			"\u00a7e[ctrl]\u00a7r+\u00a7e[left-click]\u00a7r for precise input\n";
-		tooltip += "\u00a7e[right-click]\u00a7r to reset";
+			"\u00a7e[ctrl]\u00a7r+\u00a7e[左键]\u00a7r 精确输入\n";
+		tooltip += "\u00a7e[右键]\u00a7r 重置";
 		return tooltip;
 	}
 	
 	@Override
 	public int getDefaultWidth()
 	{
-		int nameWitdh = TR.getWidth(setting.getName());
+		int nameWitdh = TR.getWidth(setting.getDisplayName());
 		int valueWidth = TR.getWidth(setting.getValueString());
 		return nameWitdh + valueWidth + 6;
 	}

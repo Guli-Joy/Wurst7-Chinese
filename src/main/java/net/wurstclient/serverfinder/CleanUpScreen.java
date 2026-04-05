@@ -51,7 +51,7 @@ public class CleanUpScreen extends Screen
 			height / 4 + 168 + 12, () -> "Cancel", "", b -> close()));
 		
 		addDrawableChild(cleanUpButton = new CleanUpButton(width / 2 - 100,
-			height / 4 + 144 + 12, () -> "Clean Up",
+			height / 4 + 144 + 12, () -> "服务器清理",
 			"Start the Clean Up with the settings\n" + "you specified above.\n"
 				+ "It might look like the game is not\n"
 				+ "responding for a couple of seconds.",
@@ -216,7 +216,7 @@ public class CleanUpScreen extends Screen
 		float partialTicks)
 	{
 		renderBackground(context);
-		context.drawCenteredTextWithShadow(textRenderer, "Clean Up", width / 2,
+		context.drawCenteredTextWithShadow(textRenderer, "服务器清理", width / 2,
 			20, Colors.WHITE);
 		context.drawCenteredTextWithShadow(textRenderer,
 			"Please select the servers you want to remove:", width / 2, 36,

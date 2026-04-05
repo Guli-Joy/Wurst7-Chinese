@@ -54,7 +54,7 @@ public final class TooManyHaxHack extends Hack
 	@Override
 	public String getRenderName()
 	{
-		return getName() + " [" + blockedFeatures.size() + " blocked]";
+		return getDisplayName() + " [" + blockedFeatures.size() + " 已屏蔽]";
 	}
 	
 	@Override

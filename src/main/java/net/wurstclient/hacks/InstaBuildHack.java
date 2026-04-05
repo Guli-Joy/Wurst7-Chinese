@@ -76,7 +76,7 @@ public final class InstaBuildHack extends Hack
 	@Override
 	public String getRenderName()
 	{
-		String name = getName();
+		String name = getDisplayName();
 		
 		switch(status)
 		{
@@ -84,7 +84,7 @@ public final class InstaBuildHack extends Hack
 			break;
 			
 			case LOADING:
-			name += " [Loading...]";
+			name += " [加载中...]";
 			break;
 			
 			case IDLE:

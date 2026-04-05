@@ -55,12 +55,12 @@ public final class AutoTotemHack extends Hack implements UpdateListener
 	public String getRenderName()
 	{
 		if(!showCounter.isChecked())
-			return getName();
+			return getDisplayName();
 		
 		if(totems == 1)
-			return getName() + " [1 totem]";
+			return getDisplayName() + " [1 totem]";
 		
-		return getName() + " [" + totems + " totems]";
+		return getDisplayName() + " [" + totems + " totems]";
 	}
 	
 	@Override
