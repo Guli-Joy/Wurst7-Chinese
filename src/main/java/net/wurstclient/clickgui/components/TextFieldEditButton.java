@@ -137,7 +137,7 @@ public final class TextFieldEditButton extends Component
 		
 		// setting name and value
 		RenderSystem.setShaderColor(1, 1, 1, 1);
-		context.drawText(tr, setting.getName(), x1, y1 + 2, txtColor, false);
+		context.drawText(tr, setting.getDisplayName(), x1, y1 + 2, txtColor, false);
 		context.drawText(tr, value, x1 + 2, y3 + 2, txtColor, false);
 		GL11.glEnable(GL11.GL_BLEND);
 	}
