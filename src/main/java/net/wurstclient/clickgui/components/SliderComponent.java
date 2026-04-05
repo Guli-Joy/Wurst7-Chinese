@@ -311,7 +311,7 @@ public final class SliderComponent extends Component
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		
 		TextRenderer tr = MC.textRenderer;
-		String name = setting.getName();
+		String name = setting.getDisplayName();
 		String value = setting.getValueString();
 		int valueWidth = tr.getWidth(value);
 		context.drawText(tr, name, x1, y1 + 2, txtColor, false);
