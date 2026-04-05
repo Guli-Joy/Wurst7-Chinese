@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2025 Wurst-Imperium and contributors.
+ * Copyright (c) 2014-2026 Wurst-Imperium and contributors.
  *
  * This source code is subject to the terms of the GNU General Public
  * License, version 3. If a copy of the GPL was not distributed with this
@@ -40,12 +40,14 @@ public class ZoomManagerScreen extends Screen implements PressAKeyCallback
 			.dimensions(width / 2 - 100, height / 4 + 144 - 16, 200, 20)
 			.build());
 		
-		addDrawableChild(ButtonWidget
-			.builder(
-				Text.literal("缩放键: ")
-					.append(zoom.getTranslatedKeybindName()),
-				b -> client.setScreen(new PressAKeyScreen(this)))
-			.dimensions(width / 2 - 79, height / 4 + 24 - 16, 158, 20).build());
+		addDrawableChild(
+			ButtonWidget
+				.builder(
+					Text.literal("缩放键: ")
+						.append(zoom.getTranslatedKeybindName()),
+					b -> client.setScreen(new PressAKeyScreen(this)))
+				.dimensions(width / 2 - 79, height / 4 + 24 - 16, 158, 20)
+				.build());
 		
 		addDrawableChild(ButtonWidget
 			.builder(Text.literal("More"), b -> level.increaseValue())
@@ -99,8 +101,8 @@ public class ZoomManagerScreen extends Screen implements PressAKeyCallback
 		SliderSetting level = zoom.getLevelSetting();
 		
 		renderBackground(context);
-		context.drawCenteredTextWithShadow(textRenderer, "缩放管理器",
-			width / 2, 40, 0xffffff);
+		context.drawCenteredTextWithShadow(textRenderer, "缩放管理器", width / 2, 40,
+			0xffffff);
 		context.drawTextWithShadow(textRenderer,
 			"Zoom Level: " + level.getValueString(), width / 2 - 75,
 			height / 4 + 44, 0xcccccc);

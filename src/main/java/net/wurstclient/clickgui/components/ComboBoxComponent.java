@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2025 Wurst-Imperium and contributors.
+ * Copyright (c) 2014-2026 Wurst-Imperium and contributors.
  *
  * This source code is subject to the terms of the GNU General Public
  * License, version 3. If a copy of the GPL was not distributed with this
@@ -136,7 +136,8 @@ public final class ComboBoxComponent<T extends Enum<T>> extends Component
 	@Override
 	public int getDefaultWidth()
 	{
-		return TR.getWidth(setting.getDisplayName()) + popupWidth + ARROW_SIZE + 6;
+		return TR.getWidth(setting.getDisplayName()) + popupWidth + ARROW_SIZE
+			+ 6;
 	}
 	
 	@Override

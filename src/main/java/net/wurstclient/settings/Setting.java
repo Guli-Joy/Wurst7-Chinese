@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2025 Wurst-Imperium and contributors.
+ * Copyright (c) 2014-2026 Wurst-Imperium and contributors.
  *
  * This source code is subject to the terms of the GNU General Public
  * License, version 3. If a copy of the GPL was not distributed with this
@@ -24,7 +24,7 @@ public abstract class Setting
 {
 	private final String name;
 	private final WText description;
-
+	
 	private static final Map<String, String> DISPLAY_NAMES = new HashMap<>();
 	static
 	{
@@ -335,7 +335,7 @@ public abstract class Setting
 	{
 		return DISPLAY_NAMES.getOrDefault(name, name);
 	}
-
+	
 	public Setting(String name, WText description)
 	{
 		this.name = Objects.requireNonNull(name);

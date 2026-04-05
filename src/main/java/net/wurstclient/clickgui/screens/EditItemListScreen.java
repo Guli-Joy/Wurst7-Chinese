@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2025 Wurst-Imperium and contributors.
+ * Copyright (c) 2014-2026 Wurst-Imperium and contributors.
  *
  * This source code is subject to the terms of the GNU General Public
  * License, version 3. If a copy of the GPL was not distributed with this
@@ -67,8 +67,8 @@ public final class EditItemListScreen extends Screen
 				client.setScreen(EditItemListScreen.this);
 			}).dimensions(width / 2 - 2, height - 56, 30, 20).build());
 		
-		addDrawableChild(removeButton =
-			ButtonWidget.builder(Text.literal("删除选中"), b -> {
+		addDrawableChild(
+			removeButton = ButtonWidget.builder(Text.literal("删除选中"), b -> {
 				itemList.remove(itemList.getItemNames()
 					.indexOf(listGui.getSelectedBlockName()));
 				client.setScreen(EditItemListScreen.this);
@@ -79,8 +79,7 @@ public final class EditItemListScreen extends Screen
 				if(b2)
 					itemList.resetToDefaults();
 				client.setScreen(EditItemListScreen.this);
-			}, Text.literal("重置为默认"),
-				Text.literal("Are you sure?"))))
+			}, Text.literal("重置为默认"), Text.literal("Are you sure?"))))
 			.dimensions(width - 108, 8, 100, 20).build());
 		
 		addDrawableChild(doneButton = ButtonWidget

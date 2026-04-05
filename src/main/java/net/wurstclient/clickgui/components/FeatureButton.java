@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2025 Wurst-Imperium and contributors.
+ * Copyright (c) 2014-2026 Wurst-Imperium and contributors.
  *
  * This source code is subject to the terms of the GNU General Public
  * License, version 3. If a copy of the GPL was not distributed with this
@@ -117,7 +117,9 @@ public final class FeatureButton extends Component
 				y2 - 0.5F, hSettings, !isSettingsWindowOpen());
 		
 		// text
-		String name = feature instanceof Hack ? Hack.getChineseName(feature.getName()) : Hack.getChineseName(feature.getName());
+		String name =
+			feature instanceof Hack ? Hack.getChineseName(feature.getName())
+				: Hack.getChineseName(feature.getName());
 		int tx = x1 + (x3 - x1 - TR.getWidth(name)) / 2;
 		int ty = y1 + 2;
 		context.drawText(TR, name, tx, ty, GUI.getTxtColor(), false);

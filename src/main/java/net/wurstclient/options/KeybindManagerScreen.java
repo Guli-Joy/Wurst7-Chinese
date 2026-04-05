@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2025 Wurst-Imperium and contributors.
+ * Copyright (c) 2014-2026 Wurst-Imperium and contributors.
  *
  * This source code is subject to the terms of the GNU General Public
  * License, version 3. If a copy of the GPL was not distributed with this
@@ -68,8 +68,7 @@ public final class KeybindManagerScreen extends Screen
 					WurstClient.INSTANCE.getKeybinds()
 						.setKeybinds(KeybindList.DEFAULT_KEYBINDS);
 				client.setScreen(this);
-			}, Text.literal("你确定要重置快捷键吗？"),
-				Text.literal("此操作无法撤销！"))))
+			}, Text.literal("你确定要重置快捷键吗？"), Text.literal("此操作无法撤销！"))))
 			.dimensions(8, 8, 100, 20).build());
 		
 		addDrawableChild(ButtonWidget
@@ -137,8 +136,8 @@ public final class KeybindManagerScreen extends Screen
 		renderBackground(context);
 		listGui.render(context, mouseX, mouseY, partialTicks);
 		
-		context.drawCenteredTextWithShadow(textRenderer, "快捷键管理器",
-			width / 2, 8, 0xFFFFFF);
+		context.drawCenteredTextWithShadow(textRenderer, "快捷键管理器", width / 2, 8,
+			0xFFFFFF);
 		
 		int count = WurstClient.INSTANCE.getKeybinds().getAllKeybinds().size();
 		context.drawCenteredTextWithShadow(textRenderer, "快捷键数: " + count,

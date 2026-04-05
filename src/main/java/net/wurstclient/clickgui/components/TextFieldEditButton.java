@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2025 Wurst-Imperium and contributors.
+ * Copyright (c) 2014-2026 Wurst-Imperium and contributors.
  *
  * This source code is subject to the terms of the GNU General Public
  * License, version 3. If a copy of the GPL was not distributed with this
@@ -87,7 +87,8 @@ public final class TextFieldEditButton extends Component
 		
 		// text
 		int txtColor = GUI.getTxtColor();
-		context.drawText(TR, setting.getDisplayName(), x1, y1 + 2, txtColor, false);
+		context.drawText(TR, setting.getDisplayName(), x1, y1 + 2, txtColor,
+			false);
 		String value = setting.getValue();
 		int maxWidth = getWidth() - TR.getWidth("...") - 2;
 		int maxLength = TR.getTextHandler().getLimitedStringLength(value,

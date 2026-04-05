@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2025 Wurst-Imperium and contributors.
+ * Copyright (c) 2014-2026 Wurst-Imperium and contributors.
  *
  * This source code is subject to the terms of the GNU General Public
  * License, version 3. If a copy of the GPL was not distributed with this
@@ -216,8 +216,8 @@ public class CleanUpScreen extends Screen
 		float partialTicks)
 	{
 		renderBackground(context);
-		context.drawCenteredTextWithShadow(textRenderer, "服务器清理", width / 2,
-			20, Colors.WHITE);
+		context.drawCenteredTextWithShadow(textRenderer, "服务器清理", width / 2, 20,
+			Colors.WHITE);
 		context.drawCenteredTextWithShadow(textRenderer,
 			"Please select the servers you want to remove:", width / 2, 36,
 			0xFFA0A0A0);

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2025 Wurst-Imperium and contributors.
+ * Copyright (c) 2014-2026 Wurst-Imperium and contributors.
  *
  * This source code is subject to the terms of the GNU General Public
  * License, version 3. If a copy of the GPL was not distributed with this
@@ -62,33 +62,26 @@ public class WurstOptionsScreen extends Screen
 			wurst.getOtfs().translationsOtf.getForceEnglish();
 		
 		new WurstOptionsButton(-154, 24,
-			() -> "点击好友: "
-				+ (middleClickFriends.isChecked() ? "开" : "关"),
+			() -> "点击好友: " + (middleClickFriends.isChecked() ? "开" : "关"),
 			middleClickFriends.getWrappedDescription(200),
 			b -> middleClickFriends
 				.setChecked(!middleClickFriends.isChecked()));
 		
 		new WurstOptionsButton(-154, 48,
 			() -> "用户统计: " + (plausible.isEnabled() ? "开" : "关"),
-			"统计有多少人在使用 Wurst 以及哪些版本最受欢迎。"
-				+ " 这些数据帮助开发者决定何时停止"
-				+ " 支持旧版本。\n\n"
-				+ "这些统计完全匿名，不会被出售，"
-				+ " 且保存在欧盟（开发者在德国自托管 Plausible）。"
-				+ " 没有 Cookie 或持久标识符"
-				+ "（参见 plausible.io）。",
+			"统计有多少人在使用 Wurst 以及哪些版本最受欢迎。" + " 这些数据帮助开发者决定何时停止" + " 支持旧版本。\n\n"
+				+ "这些统计完全匿名，不会被出售，" + " 且保存在欧盟（开发者在德国自托管 Plausible）。"
+				+ " 没有 Cookie 或持久标识符" + "（参见 plausible.io）。",
 			b -> plausible.setEnabled(!plausible.isEnabled()));
 		
 		new WurstOptionsButton(-154, 72,
-			() -> "伪装原版: "
-				+ (vanillaSpoofOtf.isEnabled() ? "开" : "关"),
+			() -> "伪装原版: " + (vanillaSpoofOtf.isEnabled() ? "开" : "关"),
 			vanillaSpoofOtf.getDescription(),
 			b -> vanillaSpoofOtf.doPrimaryAction());
 		
 		new WurstOptionsButton(-154, 96,
 			() -> "翻译: " + (!forceEnglish.isChecked() ? "开" : "关"),
-			"允许 Wurst 中的文字以其他语言显示。"
-				+ " 它将使用与 Minecraft 相同的语言"
+			"允许 Wurst 中的文字以其他语言显示。" + " 它将使用与 Minecraft 相同的语言"
 				+ " 设置。\n\n这是一个实验性功能！",
 			b -> forceEnglish.setChecked(!forceEnglish.isChecked()));
 	}
@@ -98,17 +91,13 @@ public class WurstOptionsScreen extends Screen
 		XRayHack xRayHack = WurstClient.INSTANCE.getHax().xRayHack;
 		
 		new WurstOptionsButton(-50, 24, () -> "快捷键",
-			"快捷键允许你只需按下按钮即可"
-				+ " 切换任何功能或命令。",
+			"快捷键允许你只需按下按钮即可" + " 切换任何功能或命令。",
 			b -> client.setScreen(new KeybindManagerScreen(this)));
 		
-		new WurstOptionsButton(-50, 48, () -> "透视方块",
-			"管理透视功能显示的方块。",
+		new WurstOptionsButton(-50, 48, () -> "透视方块", "管理透视功能显示的方块。",
 			b -> xRayHack.openBlockListEditor(this));
 		
-		new WurstOptionsButton(-50, 72, () -> "缩放",
-			"缩放管理器允许你更改缩放键和"
-				+ " 缩放倍数。",
+		new WurstOptionsButton(-50, 72, () -> "缩放", "缩放管理器允许你更改缩放键和" + " 缩放倍数。",
 			b -> client.setScreen(new ZoomManagerScreen(this)));
 	}
 	
@@ -116,8 +105,7 @@ public class WurstOptionsScreen extends Screen
 	{
 		OperatingSystem os = Util.getOperatingSystem();
 		
-		new WurstOptionsButton(54, 24, () -> "官方网站",
-			"§n§lWurstClient.net",
+		new WurstOptionsButton(54, 24, () -> "官方网站", "§n§lWurstClient.net",
 			b -> os.open("https://www.wurstclient.net/options-website/"));
 		
 		new WurstOptionsButton(54, 48, () -> "Wurst百科", "§n§lWurst.Wiki",
@@ -130,11 +118,8 @@ public class WurstOptionsScreen extends Screen
 			b -> os.open("https://www.wurstclient.net/options-twitter/"));
 		
 		new WurstOptionsButton(54, 120, () -> "捐赠",
-			"§n§lWurstClient.net/donate\n"
-				+ "捐赠以帮助开发者维持 Wurst Client 的运营"
-				+ " 并保持对所有人免费。\n\n"
-				+ "每一点帮助都非常感谢！你还可以"
-				+ " 获得一些很酷的回报。",
+			"§n§lWurstClient.net/donate\n" + "捐赠以帮助开发者维持 Wurst Client 的运营"
+				+ " 并保持对所有人免费。\n\n" + "每一点帮助都非常感谢！你还可以" + " 获得一些很酷的回报。",
 			b -> os.open("https://www.wurstclient.net/options-donate/"));
 	}
 	
@@ -166,8 +151,7 @@ public class WurstOptionsScreen extends Screen
 		
 		context.drawCenteredTextWithShadow(tr, "设置", middleX - 104, y2,
 			0xcccccc);
-		context.drawCenteredTextWithShadow(tr, "管理器", middleX, y2,
-			0xcccccc);
+		context.drawCenteredTextWithShadow(tr, "管理器", middleX, y2, 0xcccccc);
 		context.drawCenteredTextWithShadow(tr, "链接", middleX + 104, y2,
 			0xcccccc);
 	}

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2025 Wurst-Imperium and contributors.
+ * Copyright (c) 2014-2026 Wurst-Imperium and contributors.
  *
  * This source code is subject to the terms of the GNU General Public
  * License, version 3. If a copy of the GPL was not distributed with this
@@ -48,9 +48,8 @@ public final class FeedAuraHack extends Hack
 			+ "Anything that is further away than the specified value will not be fed.",
 		5, 1, 10, 0.05, ValueDisplay.DECIMAL);
 	
-	private final FilterBabiesSetting filterBabies =
-		new FilterBabiesSetting("不会喂养幼年动物。\n"
-			+ "Saves food, but doesn't speed up baby growth.", true);
+	private final FilterBabiesSetting filterBabies = new FilterBabiesSetting(
+		"不会喂养幼年动物。\n" + "Saves food, but doesn't speed up baby growth.", true);
 	
 	private final CheckboxSetting filterUntamed =
 		new CheckboxSetting("Filter untamed",

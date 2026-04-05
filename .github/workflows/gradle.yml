@@ -50,7 +50,7 @@ jobs:
       uses: gradle/actions/setup-gradle@v5
 
     - name: Build
-      run: ./gradlew build -x test -x spotlessCheck --stacktrace
+      run: ./gradlew build --stacktrace --warning-mode=fail
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4
