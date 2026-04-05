@@ -122,7 +122,7 @@ public final class ComboBoxComponent<T extends Enum<T>> extends Component
 			hBox, !isPopupOpen());
 		
 		// text
-		String name = setting.getName();
+		String name = setting.getDisplayName();
 		String value = "" + setting.getSelected();
 		int txtColor = GUI.getTxtColor();
 		context.drawText(TR, name, x1, y1 + 2, txtColor, false);

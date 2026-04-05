@@ -63,29 +63,29 @@ public final class EditBlockListScreen extends Screen
 		blockNameField.setMaxLength(256);
 		
 		addDrawableChild(
-			addButton = ButtonWidget.builder(Text.literal("Add"), b -> {
+			addButton = ButtonWidget.builder(Text.literal("添加"), b -> {
 				blockList.add(blockToAdd);
 				client.setScreen(EditBlockListScreen.this);
 			}).dimensions(width / 2 - 2, height - 56, 30, 20).build());
 		
 		addDrawableChild(removeButton =
-			ButtonWidget.builder(Text.literal("Remove Selected"), b -> {
+			ButtonWidget.builder(Text.literal("移除选中"), b -> {
 				blockList
 					.remove(blockList.indexOf(listGui.getSelectedBlockName()));
 				client.setScreen(EditBlockListScreen.this);
 			}).dimensions(width / 2 + 52, height - 56, 100, 20).build());
 		
-		addDrawableChild(ButtonWidget.builder(Text.literal("Reset to Defaults"),
+		addDrawableChild(ButtonWidget.builder(Text.literal("重置为默认"),
 			b -> client.setScreen(new ConfirmScreen(b2 -> {
 				if(b2)
 					blockList.resetToDefaults();
 				client.setScreen(EditBlockListScreen.this);
-			}, Text.literal("Reset to Defaults"),
+			}, Text.literal("重置为默认"),
 				Text.literal("Are you sure?"))))
 			.dimensions(width - 108, 8, 100, 20).build());
 		
 		addDrawableChild(doneButton = ButtonWidget
-			.builder(Text.literal("Done"), b -> client.setScreen(prevScreen))
+			.builder(Text.literal("完成"), b -> client.setScreen(prevScreen))
 			.dimensions(width / 2 - 100, height - 28, 200, 20).build());
 	}
 	
