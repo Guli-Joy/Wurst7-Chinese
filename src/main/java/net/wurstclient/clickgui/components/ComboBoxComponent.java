@@ -265,7 +265,7 @@ public final class ComboBoxComponent<T extends Enum<T>> extends Component
 		
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		
-		String name = setting.getName();
+		String name = setting.getDisplayName();
 		String value = "" + setting.getSelected();
 		
 		context.drawText(tr, name, x1, y1 + 2, txtColor, false);
