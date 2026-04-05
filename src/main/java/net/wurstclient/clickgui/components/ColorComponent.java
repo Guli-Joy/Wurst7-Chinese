@@ -164,7 +164,7 @@ public final class ColorComponent extends Component
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		TextRenderer tr = MC.textRenderer;
 		
-		context.drawText(tr, setting.getName(), x1, y1, txtColor, false);
+		context.drawText(tr, setting.getDisplayName(), x1, y1, txtColor, false);
 		
 		String value = ColorUtils.toHex(setting.getColor());
 		int valueWidth = tr.getWidth(value);

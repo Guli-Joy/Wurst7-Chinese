@@ -26,6 +26,7 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.wurstclient.Feature;
 import net.wurstclient.WurstClient;
 import net.wurstclient.clickgui.ClickGui;
+import net.wurstclient.hack.Hack;
 import net.wurstclient.clickgui.Component;
 import net.wurstclient.clickgui.SettingsWindow;
 import net.wurstclient.clickgui.Window;
@@ -299,7 +300,7 @@ public final class FeatureButton extends Component
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		
 		TextRenderer tr = MC.textRenderer;
-		String name = feature.getName();
+		String name = feature instanceof Hack ? Hack.getChineseName(feature.getName()) : Hack.getChineseName(feature.getName());
 		int nameWidth = tr.getWidth(name);
 		int tx = x1 + (x3 - x1 - nameWidth) / 2;
 		int ty = y1 + 2;
@@ -312,7 +313,7 @@ public final class FeatureButton extends Component
 	@Override
 	public int getDefaultWidth()
 	{
-		String name = feature.getName();
+		String name = feature instanceof Hack ? Hack.getChineseName(feature.getName()) : Hack.getChineseName(feature.getName());
 		TextRenderer tr = MC.textRenderer;
 		int width = tr.getWidth(name) + 4;
 		if(hasSettings)
