@@ -57,7 +57,7 @@ public class PressAKeyScreen extends Screen
 		float partialTicks)
 	{
 		renderBackground(context, mouseX, mouseY, partialTicks);
-		context.drawCenteredString(font, "Press a key", width / 2,
+		context.drawCenteredString(font, "按下一个键", width / 2,
 			height / 4 + 48, CommonColors.WHITE);
 		
 		for(Renderable drawable : renderables)

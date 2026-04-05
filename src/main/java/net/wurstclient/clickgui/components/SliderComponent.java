@@ -160,7 +160,7 @@ public final class SliderComponent extends Component
 		matrices.popPose();
 		
 		// text
-		String name = setting.getName();
+		String name = setting.getDisplayName();
 		String value = setting.getValueString();
 		int valueWidth = TR.width(value);
 		int txtColor = GUI.getTxtColor();

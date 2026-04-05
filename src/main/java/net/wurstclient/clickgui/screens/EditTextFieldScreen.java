@@ -51,7 +51,7 @@ public final class EditTextFieldScreen extends Screen
 		setFocused(valueField);
 		valueField.setFocused(true);
 		
-		doneButton = Button.builder(Component.literal("Done"), b -> done())
+		doneButton = Button.builder(Component.literal("完成"), b -> done())
 			.bounds(x1, y2, 200, 20).build();
 		addRenderableWidget(doneButton);
 	}
