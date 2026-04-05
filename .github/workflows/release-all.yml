@@ -79,11 +79,11 @@ jobs:
         path: all-jars
         merge-multiple: true
 
-    - name: Remove sources jars
-      run: rm -f all-jars/*-sources.jar
-
-    - name: List jars
-      run: ls -la all-jars/
+    - name: Collect jars (exclude sources)
+      run: |
+        mkdir -p release-jars
+        find all-jars -name '*.jar' ! -name '*-sources.jar' -exec cp {} release-jars/ \;
+        ls -la release-jars/
 
     - name: Get tag name
       id: tag
@@ -117,6 +117,6 @@ jobs:
           - 按 **右 Ctrl** 键打开 ClickGUI（点击界面）
           - 按 `.` 键打开命令行
           - 在 Wurst 设置 > 翻译 中关闭 **"强制英语"** 即可显示中文功能描述
-        files: all-jars/*
+        files: release-jars/*.jar
         draft: false
         prerelease: false
