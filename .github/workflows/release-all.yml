@@ -57,6 +57,9 @@ jobs:
     - name: Build
       run: ./gradlew build -x test -x spotlessCheck --stacktrace
 
+    - name: Remove sources jar
+      run: rm -f build/libs/*-sources.jar
+
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
       with:
