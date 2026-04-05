@@ -61,7 +61,7 @@ public final class KeybindProfilesScreen extends Screen
 				.dimensions(width / 2 - 50, height - 48, 100, 20).build());
 		
 		addDrawableChild(
-			ButtonWidget.builder(Text.literal("Cancel"), b -> openPrevScreen())
+			ButtonWidget.builder(Text.literal("取消"), b -> openPrevScreen())
 				.dimensions(width / 2 + 54, height - 48, 100, 20).build());
 	}
 	
