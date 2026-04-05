@@ -82,7 +82,7 @@ public final class CheckboxComponent extends Component
 				setting.isLocked());
 		
 		// text
-		String name = setting.getName();
+		String name = setting.getDisplayName();
 		context.drawText(TR, name, x3 + 2, y1 + 2, GUI.getTxtColor(), false);
 		
 		context.state.goDownLayer();

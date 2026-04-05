@@ -1,0 +1,67 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+    - "v-MC*-CN"
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+
+    - name: Checkout repository
+      uses: actions/checkout@v5
+
+    - name: Set up Java 21
+      uses: actions/setup-java@v5
+      with:
+        java-version: "21"
+        distribution: "microsoft"
+
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+
+    - name: Setup Gradle
+      uses: gradle/actions/setup-gradle@v5
+
+    - name: SpotlessApply
+      run: ./gradlew spotlessApply --stacktrace || true
+
+    - name: Build
+      run: ./gradlew build -x test -x spotlessCheck --stacktrace
+
+    - name: Get version info from tag
+      id: version
+      run: |
+        TAG="${GITHUB_REF#refs/tags/}"
+        echo "TAG=$TAG" >> $GITHUB_OUTPUT
+        # Extract MC version from tag like v-MC1.21.1-CN or v7.50.3-MC1.20.1-CN
+        MC_VER=$(echo "$TAG" | grep -oP 'MC[\d.]+' | sed 's/MC//')
+        echo "MC_VER=$MC_VER" >> $GITHUB_OUTPUT
+
+    - name: Create Release
+      uses: softprops/action-gh-release@v2
+      with:
+        name: "Wurst7 中文汉化版 - MC ${{ steps.version.outputs.MC_VER }}"
+        body: |
+          ## Wurst7 中文汉化版 - Minecraft ${{ steps.version.outputs.MC_VER }}
+
+          全面中文汉化版本，适用于 **Minecraft ${{ steps.version.outputs.MC_VER }}**。
+
+          ### 安装方法
+          1. 安装 [Fabric Loader](https://fabricmc.net/use/installer/) (Minecraft ${{ steps.version.outputs.MC_VER }})
+          2. 下载 [Fabric API](https://modrinth.com/mod/fabric-api) 放入 `mods` 文件夹
+          3. 下载下方 jar 文件放入 `mods` 文件夹
+          4. 启动游戏
+
+          ### 使用说明
+          - 按 **右 Ctrl** 键打开 ClickGUI（点击界面）
+          - 按 `.` 键打开命令行
+          - 在 Wurst 设置 > 翻译 中关闭 **"强制英语"** 即可显示中文功能描述
+        files: build/libs/*.jar
+        draft: false
+        prerelease: false

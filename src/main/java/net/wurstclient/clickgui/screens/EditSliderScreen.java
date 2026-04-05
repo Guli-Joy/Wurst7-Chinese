@@ -55,7 +55,7 @@ public final class EditSliderScreen extends Screen
 		setFocused(valueField);
 		valueField.setFocused(true);
 		
-		doneButton = ButtonWidget.builder(Text.literal("Done"), b -> done())
+		doneButton = ButtonWidget.builder(Text.literal("完成"), b -> done())
 			.dimensions(x1, y2, 200, 20).build();
 		addDrawableChild(doneButton);
 	}
