@@ -95,7 +95,7 @@ jobs:
         fi
 
     - name: Create Release
-      uses: softprops/action-gh-release@v2
+      uses: softprops/action-gh-release@v3
       with:
         tag_name: ${{ steps.tag.outputs.TAG_NAME }}
         name: "Wurst7 中文汉化版 - 全版本合集"
