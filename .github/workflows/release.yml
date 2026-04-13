@@ -41,7 +41,7 @@ jobs:
         echo "MC_VER=$MC_VER" >> $GITHUB_OUTPUT
 
     - name: Create Release
-      uses: softprops/action-gh-release@v2
+      uses: softprops/action-gh-release@v3
       with:
         name: "Wurst7 中文汉化版 - MC ${{ steps.version.outputs.MC_VER }}"
         body: |
